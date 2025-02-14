@@ -139,8 +139,8 @@ def task_runner (task: str):
     }
     response = requests.post(url=url,headers = headers, json= data)
     r=response.json()
-    code = json.loads(r['choices'][0]['message']['content']['python_code'])
-    dependency = json.loads(r['choices'][0]['message']['content']['python_dependencies'])
+    code = json.loads(r['choices'][0]['message']['content'])['python_code']
+    dependency = json.loads(r['choices'][0]['message']['content'])['python_dependencies']
     uv_script = f"""
 # /// script
 # requires-python = ">=3.8"  # Updated to a valid version
