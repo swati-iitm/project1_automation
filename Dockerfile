@@ -16,4 +16,4 @@ WORKDIR /app
 
 copy app.py /app
 
-CMD ["uv","run","app.py"]
+CMD ["uv","run","main_app.py"]
